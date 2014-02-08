@@ -9,10 +9,17 @@
 #import "MyViewController.h"
 
 @interface MyViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *theText;
 
 @end
 
 @implementation MyViewController
+- (IBAction)changeText:(UIButton *)sender {
+    if ([self.theText.text  isEqual: @"Old Text"]) {
+        self.theText.text = @"new text";
+    } else
+    self.theText.text = @"Old Text";
+}
 
 - (void)viewDidLoad
 {
